@@ -1,0 +1,69 @@
+seed: 42
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  reports: reports
+  coco: data/raw/coco
+  voc: data/raw/voc
+  imagenet: data/raw/imagenet
+  openimages: data/raw/openimages
+  user_moto: data/raw/user_motorcycle
+  user_not_moto: data/raw/user_not_motorcycle
+
+download:
+  coco: true
+  voc: false
+  imagenet: false
+  openimages: true          # P1
+
+coco:
+  splits: ["val2017", "train2017"]
+  moto_cat: "motorcycle"
+  non_moto_cats: ["car", "bicycle", "person", "dog", "cat", "bus", "truck", "bird", "horse"]
+
+voc:
+  year: "2007"
+  image_set: "trainval"
+  moto_class: "motorbike"
+  mirrors:
+    - "https://pjreddie.com/media/files/VOCtrainval_06-Nov-2007.tar"
+    - "https://data.deepai.org/VOCtrainval_06-Nov-2007.tar"
+  test_mirrors:
+    - "https://pjreddie.com/media/files/VOCtest_06-Nov-2007.tar"
+  timeout_sec: 300
+
+openimages:
+  annotation_url: "https://storage.googleapis.com/openimages/v6/oidv6-train-annotations-bbox.csv"
+  class_desc_url: "https://storage.googleapis.com/openimages/v5/class-descriptions-boxable.csv"
+  images_base: "https://open-images-dataset.s3.amazonaws.com"
+  split: "train"
+  moto_class: "Motorcycle"
+  hard_neg_classes: ["Bicycle", "Scooter"]
+  normal_neg_classes: ["Car", "Bus", "Truck"]
+  exclude_cooccur_with: ["Person"]
+  target_moto: 5000
+  target_hard_neg: 2500
+  target_normal_neg: 800
+
+target:
+  min_train_per_class: 5000
+  ideal_train_per_class: 10000
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+clean:
+  phash_bucket_bits: 16
+  phash_threshold: 5
+  min_side: 200
+  drop_grayscale_if_less_than: 0.05
+
+augment:
+  image_size: 224
+  jpeg_quality_lower: 50
+  jpeg_quality_upper: 95
+  jpeg_p: 0.3
+  imagenet_mean: [0.485, 0.456, 0.406]
+  imagenet_std: [0.229, 0.224, 0.225]

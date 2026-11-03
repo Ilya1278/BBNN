@@ -1,0 +1,21 @@
+# Конфиг FGSM-атаки. Пути — относительно корня репозитория.
+
+checkpoint:   runs/scratch_hardaug_v2_20261008_133340/model_best.pt
+model_config: runs/scratch_hardaug_v2_20261008_133340/config.yaml
+
+data:
+  manifest:      data/processed/manifest.json
+  processed_dir: data/processed
+  split:         test
+  batch_size:    64
+  num_workers:   4
+
+attack:
+  method:    fgsm
+  eps:       0.03
+  # "normalized" — по контракту INTERFACES.md §2 (атака на норм. тензорах).
+  # "pixel"      — классический FGSM: eps в [0,1] на канал (8/255 ≈ 0.03).
+  eps_space: normalized
+
+output_dir: attack/results/
+seed: 42

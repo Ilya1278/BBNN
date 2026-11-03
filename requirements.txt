@@ -1,0 +1,27 @@
+# --- ML ---
+# torch/torchvision/torchaudio установлены отдельно под CUDA 12.1
+numpy>=1.26,<2.0
+pandas>=2.1
+scikit-learn>=1.3
+
+# --- Данные и картинки ---
+Pillow>=10.2
+imagehash>=4.3
+albumentations>=1.4
+opencv-python-headless>=4.9
+
+# --- Визуализация ---
+matplotlib>=3.8
+seaborn>=0.13
+tensorboard>=2.15
+
+# --- Утилиты ---
+tqdm>=4.66
+pyyaml>=6.0
+python-dotenv>=1.0
+
+# --- Telegram ---
+aiogram>=3.4
+
+# --- Тесты ---
+pytest>=7.4

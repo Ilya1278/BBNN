@@ -1,0 +1,11 @@
+{
+  "attack": "fgsm",
+  "eps": 0.03,
+  "eps_space": "normalized",
+  "asr": 0.7700559701492538,
+  "n_samples": 2586,
+  "n_clean_correct": 2144,
+  "n_adv_success": 1651,
+  "clean_acc": 0.8290796597061099,
+  "adv_acc": 0.19064191802010827
+}

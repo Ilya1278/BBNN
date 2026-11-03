@@ -1,0 +1,7 @@
+window: 5
+dpi: 150
+figsize: [10, 6]
+style: seaborn-v0_8-whitegrid
+test_dir: data/processed/test
+batch_size: 32
+num_classes: 2

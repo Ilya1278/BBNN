@@ -1,0 +1,11 @@
+checkpoint: runs/scratch_hardaug_v2_20261008_133340/model_best.pt
+model_config: runs/scratch_hardaug_v2_20261008_133340/config.yaml
+runs_dir: runs
+reports_dir: reports
+latest_run: scratch_hardaug_v2_20261008_133340
+attack:
+  eps: 0.03
+  eps_space: normalized
+bot:
+  max_photo_size_mb: 10
+  tmp_dir: runs/bot_tmp

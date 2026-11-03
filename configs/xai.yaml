@@ -1,0 +1,9 @@
+gradcam:
+  target_layer: auto     # auto | имя слоя из named_modules()
+  alpha: 0.5
+  colormap: jet
+saliency:
+  ig_steps: 32
+output:
+  dpi: 150
+  figsize: [12, 8]

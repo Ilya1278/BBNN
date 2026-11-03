@@ -1,0 +1,43 @@
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+
+# All datasets
+data/
+
+# Training artifacts
+runs/
+checkpoints/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Reports (keep directory placeholder)
+reports/*
+!reports/.gitkeep
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

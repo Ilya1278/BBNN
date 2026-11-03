@@ -1,0 +1,28 @@
+checkpoint: runs/scratch_hardaug_v2_20261008_133340/model_best.pt
+model_config: runs/scratch_hardaug_v2_20261008_133340/config.yaml
+data:
+  manifest: data/processed/manifest.json
+  processed_dir: data/processed
+  split: test
+  batch_size: 64
+  num_workers: 4
+attack:
+  eps: 0.03
+  eps_space: normalized
+defense:
+  jpeg:
+    qualities: [95, 75, 50]
+  squeeze:
+    bit_depths: [6, 5, 4]
+    median_sizes: [1, 2]
+  adv_training:
+    eps: 0.03
+    adv_ratio: 0.5
+    epochs: 20
+    lr: 0.0005
+    out_dir: runs/adv_training/
+    val_every: 3
+    val_adv_every: 6
+    num_workers: 6
+    use_amp: true
+output_dir: reports/defense/
